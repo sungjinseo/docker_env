@@ -1,0 +1,2 @@
+user default on +@all ~* >{password 부분인데 상당히 길게 하는것을 권장}
+user {특정 user id} on -@all +get +set +select ~* >{password}  # get set select 명령 권한만 있는 특정 user 생성

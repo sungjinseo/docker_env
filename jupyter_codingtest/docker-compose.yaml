@@ -1,0 +1,40 @@
+version: '3.8'
+
+#args:
+#number: 1 # key:value쌍
+
+services:
+   jupyter-cote:
+     build:
+       # 빌드 명령을 실행할 디렉터리 경로
+       context: ./
+     ports:
+       - "5004:8888"
+     #env_file: # 파일이 여러 개라면 리스트 형태로 삽입한다.
+     # - a.env
+     # - b.env
+     #command: 
+      #- bash
+      #- -c
+      #- |
+        #/wait-for-it.sh db:5432 -t 10
+     volumes:
+      - type: bind
+        source: ./jupyter_lab_config.py
+        target: /root/.jupyter/jupyter_lab_config.py
+      - type: volume
+        source: jupyter_lab
+        target: /home/jupyter
+
+networks:
+  default:
+    name: greatseo
+    external: true
+
+volumes:
+  jupyter_lab:
+    driver: local
+    driver_opts:
+       type: none
+       o: bind
+       device: /mnt/d/workspace/

@@ -30,6 +30,7 @@ RUN apt-get update --fix-missing && \
     curl \
     bzip2 \
     ca-certificates \
+	libgl1-mesa-glx \
     libglib2.0-0 \
     libxext6 \
     libsm6 \
@@ -57,17 +58,17 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # 나눔고딕 폰트 설치, D2Coding 폰트 설치
 # matplotlib에 Nanum 폰트 추가
-RUN apt-get install fonts-nanum* && \
-    mkdir -p ~/.local/share/fonts && \
-    cd ~/.local/share/fonts && \
-    wget https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip && \
-    unzip D2Coding-Ver1.3.2-20180524.zip && \
-    mkdir /usr/share/fonts/truetype/D2Coding && \
-    cp ./D2Coding/*.ttf /usr/share/fonts/truetype/D2Coding/ && \
-    #cp /usr/share/fonts/truetype/nanum/Nanum* /opt/conda/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/ && \
-    fc-cache -fv && \
-    rm -rf D2Coding* && \
-    rm -rf ~/.cache/matplotlib/*
+#RUN apt-get install fonts-nanum* && \
+#    mkdir -p ~/.local/share/fonts && \
+#    cd ~/.local/share/fonts && \
+#    wget https://github.com/naver/d2codingfont/releases/download/VER1.3.2/D2Coding-Ver1.3.2-20180524.zip && \
+#    unzip D2Coding-Ver1.3.2-20180524.zip && \
+#    mkdir /usr/share/fonts/truetype/D2Coding && \
+#    cp ./D2Coding/*.ttf /usr/share/fonts/truetype/D2Coding/ && \
+#    #cp /usr/share/fonts/truetype/nanum/Nanum* /opt/conda/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/ && \
+#    fc-cache -fv && \
+#    rm -rf D2Coding* && \
+#    rm -rf ~/.cache/matplotlib/*
 	
 
 RUN apt-get update && apt-get install -y vim locales tzdata && \

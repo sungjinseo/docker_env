@@ -1,0 +1,4 @@
+/db_allin/data
+/airflow/logs
+/airflow/plugins
+/airflow/dags

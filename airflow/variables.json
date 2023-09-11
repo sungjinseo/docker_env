@@ -1,0 +1,9 @@
+{
+    "data_lake_server": "data_lake_server",
+    "data_lake_login": "data_lake_login",
+    "data_lake_password": "data_lake_password",
+    "database_server": "database_server",
+    "database_login": "database_login",
+    "database_password": "database_password",
+    "database_name": "database_name"
+}

@@ -8,12 +8,6 @@ from airflow.models import Variable
 from minio import Minio
 from sqlalchemy.engine import create_engine
 
-MINIO_BUCKET_NAME = 'etl'
-MINIO_ADDRESS =  '221.138.17.149:5002'
-MINIO_ROOT_USER = 'TB6ZsnwHliJYom97'
-MINIO_ROOT_PASSWORD = 'pKkoKZVJhbvOeW21kcm7U6ybuuP7TKp2'
-
-
 DEFAULT_ARGS = {
     'owner': 'Airflow',
     'depends_on_past': False,

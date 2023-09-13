@@ -3,6 +3,7 @@ minio
 pymysql
 pandas
 apache-airflow-providers-papermill
+apache-airflow-providers-docker
 matplotlib==3.7.1
 torch==2.0.1
 torchsummary==1.5.1
